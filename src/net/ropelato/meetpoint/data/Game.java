@@ -61,7 +61,7 @@ public class Game extends Thread
 		List<String> clientsToRemove = new ArrayList<String>();
 		for(Map.Entry<String, Client> clientEntry : clients.entrySet())
 		{
-			if(clientEntry.getValue().getLastAccess() < System.currentTimeMillis() - CLIENT_TIMEOUT)
+			if(clientEntry.getValue().getLastAccess() < (System.currentTimeMillis() - CLIENT_TIMEOUT))
 			{
 				clientsToRemove.add(clientEntry.getKey());
 			}
