@@ -16,6 +16,7 @@ public class Client
 	private double zPosition = 0;
 	private double angle = 0;
 	private long lastAccess;
+	private boolean isPlaying = false;
 
 	private Queue<ChatMessage> messageQueue = new LinkedList<ChatMessage>();
 
@@ -101,6 +102,16 @@ public class Client
 	public synchronized String getClientId()
 	{
 		return this.clientId;
+	}
+
+	public boolean isPlaying()
+	{
+		return isPlaying;
+	}
+
+	public void setIsPlaying(boolean playing)
+	{
+		isPlaying = playing;
 	}
 }
 

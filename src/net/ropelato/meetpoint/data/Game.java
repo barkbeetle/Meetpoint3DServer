@@ -40,7 +40,7 @@ public class Game extends Thread
 
 		for(Client client : clients.values())
 		{
-			if(!client.getClientId().equals(clientId))
+			if(!client.getClientId().equals(clientId) && client.isPlaying())
 			{
 				clientInformation += client.getInformationString() + "\n";
 			}

@@ -134,6 +134,7 @@ public class HttpConnection implements Runnable
 			game.getClient(clientId).setZPosition(zPosition);
 			game.getClient(clientId).setAngle(angle);
 			game.getClient(clientId).setLastAccess(System.currentTimeMillis());
+			game.getClient(clientId).setIsPlaying(true);
 		}
 		else
 		{
