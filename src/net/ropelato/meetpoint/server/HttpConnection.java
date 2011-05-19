@@ -45,16 +45,16 @@ public class HttpConnection implements Runnable
 			{
 				try
 				{
-					if(resource.contains("register"))
+					if(resource.startsWith("/register"))
 					{
 						sendClientId(printStream, resource);
 					}
-					else if(resource.contains("position"))
+					else if(resource.startsWith("/position"))
 					{
 						updateClientPosition(resource);
 						sendClientPosition(printStream, resource);
 					}
-					else if(resource.contains("chat"))
+					else if(resource.startsWith("/chat"))
 					{
 						newChatMessage(printStream, resource);
 					}
