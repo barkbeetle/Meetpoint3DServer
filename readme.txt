@@ -12,5 +12,5 @@ Executing startServer.sh will start your server and make it run in background. T
 
 2) Stopping the server
 
-Executing stopServer.sh will kill all java processes listening to port 1024. This should only be Meetpoint3D. If you're not sure, don't execute it!
+Executing stopServer.sh will kill all java processes listening to port 63387. This should only be Meetpoint3D. If you're not sure, don't execute it!
 
