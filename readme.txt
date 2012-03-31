@@ -8,7 +8,7 @@
 
 1) Starting the server
 
-Executing startServer.sh will start your server and make it run in background. The server output is written to out.txt
+Executing startServer.sh will start your server and make it run in background. The server output is written to log.txt
 
 2) Stopping the server
 
