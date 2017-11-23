@@ -1,1 +1,8 @@
+.DS_Store
+Thumbs.db
+._*
+out
+*.iws
+nohup.out
 log.txt
+error.txt

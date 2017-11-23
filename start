@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ -n "`ps -ef | grep "java.* -jar Meetpoint3DServer" | grep -v grep`" ]
+then
+	echo "Another instance of Meetpoint3DServer is already running." 1>&2
+	exit 1
+fi
+
+basedir=`dirname "$0"`
+nohup java -jar Meetpoint3DServer.jar $@ > "$basedir/log.txt" 2>&1 &
+
+if [ $? -ne 0 ]
+then
+	echo "Could not start Meetpoint3DServer." 1>&2
+	exit 1
+else
+	echo "Meetpoint3DServer has been started."
+fi

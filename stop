@@ -1,0 +1,27 @@
+#!/bin/sh
+
+if [ -z "`ps -ef | grep "java.* -jar Meetpoint3DServer" | grep -v grep`" ]
+then
+	echo "Meetpoint3DServer has not been started." 1>&2
+	exit 1
+fi
+
+for pid in `ps -ef | grep "java.* -jar Meetpoint3DServer" | grep -v grep | awk '{print $2}'`
+do
+	echo "Trying to stop process $pid..."
+
+	kill $pid
+	while kill -0 $pid 2>/dev/null 
+	do
+		sleep 0.5
+	done
+	
+	if [ -n "`ps -ef | grep "java.* -jar Meetpoint3DServer" | grep -v grep`" ]
+	then
+		echo "Could not stop Meetpoint3DServer." 1>&2
+		exit 1
+	else
+		echo "Meetpoint3DServer has been stopped."
+	fi
+done
+
