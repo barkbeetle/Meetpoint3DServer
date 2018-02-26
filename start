@@ -7,6 +7,7 @@ then
 fi
 
 basedir=`dirname "$0"`
+cd "$basedir"
 nohup java -jar Meetpoint3DServer.jar $@ > "$basedir/log.txt" 2>&1 &
 
 if [ $? -ne 0 ]
